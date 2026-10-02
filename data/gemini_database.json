@@ -1,0 +1,109 @@
+{
+  "users": [
+    {
+      "id": "usr_demo_gemini",
+      "email": "demo@gemini.ai",
+      "username": "Gemini Explorer",
+      "password_hash": "65d831b6cfb4eaa224e05a4937cb7ce9ba82c3a4a1eeae6bd0886516fbe016026df8b1b281a96a9aa2af4ff040c9783b41979e2449ba8f7bd919a8e8c398dbba",
+      "salt": "a66c8df1d953d582153894b115d9f6eb",
+      "avatar_url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "created_at": "2026-09-29T08:48:46.542Z"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "tok_3d1eb0d537d1b530548f78abdcf6d2baec79a70481687e2c9e52102bff0761da",
+      "user_id": "usr_demo_gemini",
+      "created_at": "2026-10-02T08:48:53.199Z",
+      "expires_at": "2026-10-09T08:48:53.199Z"
+    }
+  ],
+  "conversations": [
+    {
+      "id": "conv_welcome_1",
+      "user_id": "usr_demo_gemini",
+      "title": "Welcome to Gemini Advanced AI",
+      "model": "gemini-3.8-flash",
+      "pinned": 1,
+      "archived": 0,
+      "created_at": "2026-09-30T08:48:46.542Z",
+      "updated_at": "2026-09-30T08:48:46.542Z"
+    }
+  ],
+  "messages": [
+    {
+      "id": "msg_1",
+      "conversation_id": "conv_welcome_1",
+      "role": "user",
+      "content": "Hello! What can this advanced Gemini chatbot and dashboard do?",
+      "tokens_used": 14,
+      "created_at": "2026-09-30T08:48:46.542Z"
+    },
+    {
+      "id": "msg_2",
+      "conversation_id": "conv_welcome_1",
+      "role": "model",
+      "content": "### Welcome to Gemini Advanced AI Studio ✨\n\nI'm your next-generation AI assistant built with:\n* **Minimalist Gemini UI**: Inspired by Google Gemini's clean design, smooth animations, and reactive conversation flow.\n* **SQL Database Architecture**: Relational tables (`users`, `conversations`, `messages`, `sessions`) stored and logged with real SQL queries.\n* **Secure Authentication**: Salted PBKDF2 password hashing & token-based session management.\n* **Analytics Dashboard**: Real-time prompt stats, token estimations, interaction logs, and raw SQL query inspector.\n* **Python & MySQL Blueprint**: View or export production-ready Python FastAPI/Flask code and MySQL schemas!\n\nTry asking me a question or test the dashboard on the top right navigation!",
+      "tokens_used": 148,
+      "created_at": "2026-09-30T08:48:47.542Z"
+    }
+  ],
+  "sql_logs": [
+    {
+      "id": "f8db682a-3710-42e0-b5d8-3bbf8a458dea",
+      "query": "SELECT * FROM sessions WHERE token = ? AND expires_at > NOW() LIMIT 1",
+      "params": "[\"tok_3d1eb0...\"]",
+      "duration_ms": 1,
+      "timestamp": "2026-10-02T08:49:05.237Z",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "3d4dcbce-4ac6-4a9d-a77c-5c12514b24b3",
+      "query": "SELECT\n        COUNT(DISTINCT c.id) as total_chats,\n        COUNT(m.id) as total_messages,\n        SUM(m.tokens_used) as total_tokens\n      FROM conversations c\n      JOIN messages m ON c.id = m.conversation_id\n      WHERE c.user_id = ?",
+      "params": "[\"usr_demo_gemini\"]",
+      "duration_ms": 1,
+      "timestamp": "2026-10-02T08:49:00.498Z",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "0ca8e258-6366-4b46-bb10-4c65d7537b5a",
+      "query": "SELECT * FROM sessions WHERE token = ? AND expires_at > NOW() LIMIT 1",
+      "params": "[\"tok_3d1eb0...\"]",
+      "duration_ms": 1,
+      "timestamp": "2026-10-02T08:49:00.497Z",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "11de5acf-50ab-4f83-a456-4f232d5a3d62",
+      "query": "SELECT c.*, COUNT(m.id) as message_count\n      FROM conversations c\n      LEFT JOIN messages m ON c.id = m.conversation_id\n      WHERE c.user_id = ? AND c.archived = 0\n      GROUP BY c.id\n      ORDER BY c.pinned DESC, c.updated_at DESC",
+      "params": "[\"usr_demo_gemini\"]",
+      "duration_ms": 1,
+      "timestamp": "2026-10-02T08:48:56.321Z",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "2399794b-7aa9-4a73-9f62-a05bf987f0b0",
+      "query": "SELECT * FROM sessions WHERE token = ? AND expires_at > NOW() LIMIT 1",
+      "params": "[\"tok_3d1eb0...\"]",
+      "duration_ms": 1,
+      "timestamp": "2026-10-02T08:48:56.321Z",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "c7cc9186-5e0a-4be2-9224-2593f82adfce",
+      "query": "INSERT INTO sessions (token, user_id, created_at, expires_at) VALUES (?, ?, ?, ?)",
+      "params": "[\"tok_3d1eb0...\",\"usr_demo_gemini\",\"2026-10-02T08:48:53.199Z\",\"2026-10-09T08:48:53.199Z\"]",
+      "duration_ms": 1,
+      "timestamp": "2026-10-02T08:48:53.199Z",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "f3d82ef8-c423-41ee-a024-8a990d2a0012",
+      "query": "SELECT * FROM users WHERE LOWER(email) = LOWER(?) LIMIT 1",
+      "params": "[\"demo@gemini.ai\"]",
+      "duration_ms": 1,
+      "timestamp": "2026-10-02T08:48:53.112Z",
+      "status": "SUCCESS"
+    }
+  ]
+}

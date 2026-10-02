@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #131314;
+    color: #e3e3e3;
+    font-family: 'Google Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Markdown typography styling inside chat */
+.prose-gemini {
+  color: #e3e3e3;
+  line-height: 1.7;
+}
+.prose-gemini h1, .prose-gemini h2, .prose-gemini h3, .prose-gemini h4 {
+  color: #ffffff;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.prose-gemini h1 { font-size: 1.45rem; }
+.prose-gemini h2 { font-size: 1.25rem; }
+.prose-gemini h3 { font-size: 1.1rem; }
+.prose-gemini p {
+  margin-bottom: 0.85rem;
+}
+.prose-gemini ul {
+  list-style-type: disc;
+  padding-left: 1.4rem;
+  margin-bottom: 0.85rem;
+}
+.prose-gemini ol {
+  list-style-type: decimal;
+  padding-left: 1.4rem;
+  margin-bottom: 0.85rem;
+}
+.prose-gemini li {
+  margin-bottom: 0.35rem;
+}
+.prose-gemini strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+.prose-gemini blockquote {
+  border-left: 3px solid #4a90e2;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #9aa0a6;
+  margin: 1rem 0;
+}
+.prose-gemini code {
+  font-family: 'Fira Code', monospace;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.88em;
+  color: #a8c7fa;
+}
+.prose-gemini pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+.prose-gemini table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+.prose-gemini th, .prose-gemini td {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.6rem 0.85rem;
+  text-align: left;
+}
+.prose-gemini th {
+  background: rgba(255, 255, 255, 0.05);
+  font-weight: 600;
+}
+
+/* Gemini animated gradient text */
+.gemini-gradient-text {
+  background: linear-gradient(90deg, #4285f4 0%, #9b72cb 35%, #d96570 70%, #d96570 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gemini-sparkle-glow {
+  filter: drop-shadow(0 0 12px rgba(66, 133, 244, 0.45));
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+

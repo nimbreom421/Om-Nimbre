@@ -1,0 +1,6 @@
+{
+  "name": "Gemini Advanced AI Chatbot & Dashboard",
+  "description": "An advanced AI chatbot with Gemini minimalist design, secure user authentication, SQL conversation storage, real-time streaming, and an analytics interaction dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
