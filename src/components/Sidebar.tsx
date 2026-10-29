@@ -194,7 +194,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         <div className="flex items-center justify-between p-4 border-b border-white/5">
           <div className="flex items-center gap-2.5">
             <GeminiLogo size={24} />
-            <span className="font-semibold text-neutral-200 text-sm tracking-wide">Gemini Studio</span>
+            <span className="font-semibold text-neutral-200 text-sm tracking-wide">OMAI Studio</span>
           </div>
           <button
             onClick={onToggleOpen}

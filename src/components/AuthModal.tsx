@@ -76,7 +76,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onSuccess
         <div className="flex flex-col items-center text-center mb-6">
           <GeminiLogo size={36} animated />
           <h2 className="text-xl font-bold text-white mt-3">
-            {mode === 'login' ? 'Sign in to Gemini AI' : 'Create Gemini Account'}
+            {mode === 'login' ? 'Sign in to OMAI' : 'Create OMAI Account'}
           </h2>
           <p className="text-xs text-neutral-400 mt-1">
             Access secure conversation history and the SQL analytics dashboard.

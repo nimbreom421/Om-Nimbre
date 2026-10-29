@@ -134,7 +134,7 @@ class SqlDatabase {
       const demoUser: User = {
         id: 'usr_demo_gemini',
         email: 'demo@gemini.ai',
-        username: 'Gemini Explorer',
+        username: 'OMAI Explorer',
         password_hash: hash,
         salt,
         avatar_url: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
@@ -147,7 +147,7 @@ class SqlDatabase {
       const conv: Conversation = {
         id: convId,
         user_id: demoUser.id,
-        title: 'Welcome to Gemini Advanced AI',
+        title: 'Welcome to OMAI Studio',
         model: 'gemini-3.8-flash',
         pinned: 1,
         archived: 0,
@@ -161,7 +161,7 @@ class SqlDatabase {
           id: 'msg_1',
           conversation_id: convId,
           role: 'user',
-          content: 'Hello! What can this advanced Gemini chatbot and dashboard do?',
+          content: 'Hello! What can OMAI and this dashboard do?',
           tokens_used: 14,
           created_at: new Date(Date.now() - 86400000 * 2).toISOString(),
         },
@@ -169,10 +169,10 @@ class SqlDatabase {
           id: 'msg_2',
           conversation_id: convId,
           role: 'model',
-          content: `### Welcome to Gemini Advanced AI Studio ✨
+          content: `### Welcome to OMAI Studio ✨
 
 I'm your next-generation AI assistant built with:
-* **Minimalist Gemini UI**: Inspired by Google Gemini's clean design, smooth animations, and reactive conversation flow.
+* **Minimalist UI**: Clean design, smooth animations, and reactive conversation flow.
 * **SQL Database Architecture**: Relational tables (\`users\`, \`conversations\`, \`messages\`, \`sessions\`) stored and logged with real SQL queries.
 * **Secure Authentication**: Salted PBKDF2 password hashing & token-based session management.
 * **Analytics Dashboard**: Real-time prompt stats, token estimations, interaction logs, and raw SQL query inspector.

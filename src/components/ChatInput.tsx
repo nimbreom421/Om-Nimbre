@@ -10,7 +10,7 @@ interface ChatInputProps {
 export const ChatInput: React.FC<ChatInputProps> = ({
   onSendMessage,
   disabled = false,
-  placeholder = 'Ask Gemini anything... (e.g. Write a Python script to query MySQL)',
+  placeholder = 'Ask OMAI anything... (e.g. Write a Python script to query MySQL)',
 }) => {
   const [text, setText] = useState('');
   const [webSearch, setWebSearch] = useState(false);
@@ -105,7 +105,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({
             {/* Model Pill */}
             <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300">
               <Sparkles size={12} className="text-blue-400" />
-              <span className="font-medium text-[11px]">gemini-3.8-flash</span>
+              <span className="font-medium text-[11px]">omai-3.8-flash</span>
             </div>
 
             {/* Web Search toggle */}

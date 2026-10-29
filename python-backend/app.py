@@ -1,5 +1,5 @@
 """
-Gemini Advanced AI Chatbot - FastAPI Python Backend
+OMAI Advanced AI Chatbot - FastAPI Python Backend
 With MySQL Persistence, JWT Authentication & Gemini API Integration
 """
 
@@ -130,7 +130,7 @@ def get_current_user(authorization: Optional[str] = Header(None), db: Session = 
     return user
 
 # ----------------- FastAPI App -----------------
-app = FastAPI(title="Gemini Advanced AI Chatbot API", version="2.0.0")
+app = FastAPI(title="OMAI Advanced AI Chatbot API", version="2.0.0")
 
 app.add_middleware(
     CORSMiddleware,
@@ -237,7 +237,7 @@ def chat(req: ChatRequest, current_user: UserModel = Depends(get_current_user), 
             model=req.model or "gemini-3.8-flash",
             contents=contents,
             config=types.GenerateContentConfig(
-                system_instruction="You are Gemini, a helpful, intelligent, and articulate AI assistant created by Google."
+                system_instruction="You are OMAI, a helpful, intelligent, and articulate AI assistant."
             )
         )
         ai_reply = response.text or "I am here to help!"

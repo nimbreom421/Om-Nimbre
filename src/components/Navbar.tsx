@@ -35,7 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex items-center gap-2 min-w-0">
           <GeminiLogo size={20} />
           <span className="font-medium text-sm text-neutral-200 truncate max-w-[200px] sm:max-w-xs md:max-w-md">
-            {title || 'Gemini 3.8 Flash'}
+            {title || 'OMAI'}
           </span>
         </div>
       </div>

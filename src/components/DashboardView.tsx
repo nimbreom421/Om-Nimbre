@@ -95,7 +95,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ user, onOpenChat }
   // Export as Markdown
   const exportAsMarkdown = () => {
     if (!stats) return;
-    let md = `# Gemini AI Interaction History Export\nExported on: ${new Date().toLocaleString()}\nUser: ${user?.username} (${user?.email})\n\n`;
+    let md = `# OMAI Interaction History Export\nExported on: ${new Date().toLocaleString()}\nUser: ${user?.username} (${user?.email})\n\n`;
     md += `## Metrics Summary\n- Total Conversations: ${stats.totalConversations}\n- Total Prompts: ${stats.totalPrompts}\n- Total AI Responses: ${stats.totalAiResponses}\n- Total Estimated Tokens: ${stats.totalTokens}\n\n`;
     md += `## Past Interactions Log\n\n`;
     stats.recentInteractions.forEach(item => {
@@ -107,7 +107,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ user, onOpenChat }
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `gemini-interactions-${new Date().toISOString().slice(0, 10)}.md`;
+    a.download = `omai-interactions-${new Date().toISOString().slice(0, 10)}.md`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -225,7 +225,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ user, onOpenChat }
       <div className="p-5 rounded-2xl bg-[#1e1f20] border border-white/5 shadow-md">
         <h2 className="text-sm font-semibold text-neutral-200 mb-4 flex items-center gap-2">
           <span>7-Day Interaction Activity</span>
-          <span className="text-xs font-normal text-neutral-500">(Prompts vs Gemini Replies)</span>
+          <span className="text-xs font-normal text-neutral-500">(Prompts vs OMAI Replies)</span>
         </h2>
 
         <div className="grid grid-cols-7 gap-2 pt-4 border-t border-white/5">
@@ -270,7 +270,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ user, onOpenChat }
           </div>
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 bg-purple-500 rounded-xs" />
-            <span>Gemini Responses</span>
+            <span>OMAI Responses</span>
           </div>
         </div>
       </div>
@@ -339,7 +339,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ user, onOpenChat }
                         </span>
                       ) : (
                         <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20 text-[10px] font-medium">
-                          Gemini
+                          OMAI
                         </span>
                       )}
                     </td>

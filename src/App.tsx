@@ -283,7 +283,7 @@ export default function App() {
           onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
           title={
             currentView === 'chat'
-              ? activeConversation?.title || 'Gemini 3.8 Flash'
+              ? activeConversation?.title || 'OMAI'
               : currentView === 'dashboard'
               ? 'Interactions Dashboard'
               : 'Python & MySQL Engine'
@@ -318,12 +318,12 @@ export default function App() {
                   </div>
                 </div>
               ) : messages.length === 0 ? (
-                /* Gemini Welcome State */
+                /* OMAI Welcome State */
                 <div className="h-full max-w-4xl mx-auto flex flex-col justify-center items-start px-4 sm:px-8 py-10">
                   <div className="mb-8 space-y-2">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-neutral-400">
                       <Sparkles size={13} className="text-blue-400" />
-                      <span>Google GenAI • Python & MySQL Backend</span>
+                      <span>OMAI 3.8 Flash • Python & MySQL Backend</span>
                     </div>
 
                     <h1 className="text-3xl sm:text-5xl font-semibold tracking-tight text-white mt-4">
@@ -382,8 +382,8 @@ export default function App() {
               disabled={isStreaming}
               placeholder={
                 messages.length === 0
-                  ? 'Ask Gemini anything... (e.g. Write a Python script to query MySQL)'
-                  : 'Reply to Gemini...'
+                  ? 'Ask OMAI anything... (e.g. Write a Python script to query MySQL)'
+                  : 'Reply to OMAI...'
               }
             />
           </div>

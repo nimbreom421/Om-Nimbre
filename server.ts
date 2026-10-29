@@ -250,7 +250,7 @@ app.post('/api/chat', requireAuth, async (req: AuthRequest, res: Response) => {
     }));
 
     const systemInstruction = system_instruction ||
-      'You are Gemini, Google\'s state-of-the-art AI assistant. ' +
+      'You are OMAI, a state-of-the-art AI assistant. ' +
       'Provide articulate, precise, well-structured answers using markdown with headings, bullet points, clean tables, and syntax-highlighted code blocks where helpful. ' +
       'Maintain an empathetic, intelligent, and minimalist tone.';
 
@@ -408,7 +408,7 @@ async function startServer() {
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`[Gemini Chatbot Server] Running on http://localhost:${PORT}`);
+    console.log(`[OMAI Server] Running on http://localhost:${PORT}`);
   });
 }
 

@@ -71,7 +71,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, isStreaming =
         <div className="flex-1 min-w-0">
           {/* Header info */}
           <div className={`flex items-center gap-2 mb-1.5 text-xs text-neutral-400 ${isUser ? 'justify-end' : 'justify-start'}`}>
-            <span className="font-medium text-neutral-300">{isUser ? 'You' : 'Gemini 3.8 Flash'}</span>
+            <span className="font-medium text-neutral-300">{isUser ? 'You' : 'OMAI'}</span>
             <span>•</span>
             <span>
               {new Date(message.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
